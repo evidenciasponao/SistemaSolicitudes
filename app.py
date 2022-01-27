@@ -12,6 +12,8 @@ app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='solicitudes'
 mysql.init_app(app)
 
+
+
 @app.route('/')
 def index():
 
@@ -22,6 +24,10 @@ def index():
     conn.commit()
 
     return render_template('registros/index.html')
+
+@app.route('/create')
+def create():
+    return render_template('registros/create.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
