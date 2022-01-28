@@ -1,7 +1,7 @@
 from distutils.log import debug
 from fileinput import filename
 from flask import Flask
-from flask import render_template,request
+from flask import render_template,request,redirect
 from flaskext.mysql import MySQL
 from datetime import datetime
 
@@ -29,7 +29,7 @@ def index():
 
     conn.commit()
 
-    return render_template('registros/index.html')
+    return render_template('registros/index.html', registro=registro)
 
 @app.route('/create')
 def create():
@@ -67,7 +67,7 @@ def storage():
     cursor.execute(sql,datos)
     conn.commit()
 
-    return render_template('registros/index.html')
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)

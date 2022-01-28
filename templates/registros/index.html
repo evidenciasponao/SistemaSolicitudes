@@ -8,7 +8,55 @@
 </head>
 <body>
 
-    Hola usuario!
+    <table class="table table-sm table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Cedula</th>
+                <th>Expedición</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>Empresa</th>
+                <th>Cargo</th>
+                <th>Inicio</th>
+                <th>Retiro</th>
+                <th>Nacimiento</th>
+                <th>Pension</th>
+                <th>Foto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for registro in registro %}
+            <tr>
+                <td>{{ registro[0] }}</td>
+                <td>{{ registro[1] }}</td>
+                <td>{{ registro[2] }}</td>
+                <td>{{ registro[3] }}</td>
+                <td>{{ registro[4] }}</td>
+                <td>{{ registro[5] }}</td>
+                <td>{{ registro[6] }}</td>
+                <td>{{ registro[7] }}</td>
+                <td>{{ registro[8] }}</td>
+                <td>{{ registro[9] }}</td>
+                <td>{{ registro[10] }}</td>
+                <td>{{ registro[11] }}</td>
+                <td>{{ registro[12] }}</td>
+                <td>{{ registro[13] }}</td>
+                <td> Editar │
+                    <a href="/destroy/{{registro[0]}}">Eliminar</a>
+                    
+                </td>
+            </tr>                
+            {% endfor %}
+
+       
+
+        </tbody>
+    </table>
 
 </body>
 </html>
