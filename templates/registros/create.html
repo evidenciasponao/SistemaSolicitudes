@@ -1,7 +1,8 @@
+    {% include 'header.html' %}
     <form method="post" action="/store" enctype="multipart/form-data">
     
     Cedula:
-    <input type="text" name="txtCedula" id="txtCedula">
+    <input type="text" name="txtCedula" id="txtCedula" required>
     <br>
     Lugar de Expedición:
     <input type="text" name="txtLugarExpedicion" id="txtLugarExpedicion">
@@ -37,8 +38,9 @@
     <input type="text" name="txtFondoPension" id="txtFondoPension">
     <br>
     Foto:
-    <input type="file" name="txtFoto" id="txtFoto">
+    <input type="file" name="txtFoto" id="txtFoto" required>
     <br>
     <br>
     <input type="submit" value="Agregar">
-</form>
+    </form>
+{% include 'footer.html' %}

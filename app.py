@@ -41,6 +41,11 @@ def destroy(id):
     conn = mysql.connect()
     cursor = conn.cursor()
 
+    cursor.execute("SELECT foto FROM registro WHERE id=%s", id)
+    fila=cursor.fetchall()
+    os.remove(os.path.join(app.config['CARPETA'], fila[0][0]))
+ 
+
     cursor.execute("DELETE FROM registro WHERE id = %s",(id))
     conn.commit()
     return redirect('/')

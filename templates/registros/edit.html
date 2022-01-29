@@ -1,3 +1,4 @@
+{% include 'header.html' %}
 Formulario para editar
 {% for registro in registros %}
 
@@ -6,40 +7,40 @@ Formulario para editar
     <input type="text" value="{{ registro[0] }}" name="txtID" id="txtID">
     <br>
     Cedula:
-    <input type="text" value="{{ registro[1] }}" name="txtCedula" id="txtCedula">
+    <input type="text" value="{{ registro[1] }}" name="txtCedula" id="txtCedula" required>
     <br>
     Lugar de Expedición:
-    <input type="text" value="{{ registro[2] }}" name="txtLugarExpedicion" id="txtLugarExpedicion">
+    <input type="text" value="{{ registro[2] }}" name="txtLugarExpedicion" id="txtLugarExpedicion" required>
     <br>
     Nombres:
-    <input type="text" value="{{ registro[3] }}" name="txtNombres" id="txtNombres">
+    <input type="text" value="{{ registro[3] }}" name="txtNombres" id="txtNombres" required>
     <br>
     Apellidos:
-    <input type="text" value="{{ registro[4] }}" name="txtApellidos" id="txtApellidos">
+    <input type="text" value="{{ registro[4] }}" name="txtApellidos" id="txtApellidos" required>
     <br>
     Teléfono:
-    <input type="text" value="{{ registro[5] }}" name="txtTelefono" id="txtTelefono">
+    <input type="text" value="{{ registro[5] }}" name="txtTelefono" id="txtTelefono" required>
     <br>
     Email:
-    <input type="text" value="{{ registro[6] }}" name="txtEmail" id="txtEmail">
+    <input type="text" value="{{ registro[6] }}" name="txtEmail" id="txtEmail" required>
     <br>
     Empresa donde laboro:
-    <input type="text" value="{{ registro[7] }}" name="txtEmpresaLaboro" id="txtEmpresaLaboro">
+    <input type="text" value="{{ registro[7] }}" name="txtEmpresaLaboro" id="txtEmpresaLaboro" required>
     <br>
     Cargo que desempeño:
-    <input type="text" value="{{ registro[8] }}" name="txtCargo" id="txtCargo">
+    <input type="text" value="{{ registro[8] }}" name="txtCargo" id="txtCargo" required>
     <br>
     Fecha en la que inicio:
-    <input type="text" value="{{ registro[9] }}" name="txtFechaInicio" id="txtFechaInicio">
+    <input type="text" value="{{ registro[9] }}" name="txtFechaInicio" id="txtFechaInicio" required>
     <br>
     Fecha en la que se retiró:
-    <input type="text" value="{{ registro[10] }}" name="txtFechaRetiro" id="txtFechaRetiro">
+    <input type="text" value="{{ registro[10] }}" name="txtFechaRetiro" id="txtFechaRetiro" required>
     <br>
     Fecha de Nacimiento:
-    <input type="text" value="{{ registro[11] }}" name="txtFechaNacimiento" id="txtFechaNacimiento">
+    <input type="text" value="{{ registro[11] }}" name="txtFechaNacimiento" id="txtFechaNacimiento" required>
     <br>
     Fondo de pensión en el que estuvo afiliado:
-    <input type="text" value="{{ registro[12] }}"name="txtFondoPension" id="txtFondoPension">
+    <input type="text" value="{{ registro[12] }}"name="txtFondoPension" id="txtFondoPension" required>
     <br>
     Foto:
     {{ registro[13] }}
@@ -50,3 +51,4 @@ Formulario para editar
 </form>
     
 {% endfor %}
+{% include 'footer.html' %}
