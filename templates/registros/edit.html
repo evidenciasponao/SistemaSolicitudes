@@ -1,0 +1,50 @@
+Formulario para editar
+{% for registro in registros %}
+
+<form method="post" action="/store" enctype="multipart/form-data">
+    <br>
+    Cedula:
+    <input type="text" value="{{ registro[1] }}" name="txtCedula" id="txtCedula">
+    <br>
+    Lugar de Expedición:
+    <input type="text" value="{{ registro[2] }}" name="txtLugarExpedicion" id="txtLugarExpedicion">
+    <br>
+    Nombres:
+    <input type="text" value="{{ registro[3] }}" name="txtNombres" id="txtNombres">
+    <br>
+    Apellidos:
+    <input type="text" value="{{ registro[4] }}" name="txtApellidos" id="txtApellidos">
+    <br>
+    Teléfono:
+    <input type="text" value="{{ registro[5] }}" name="txtTelefono" id="txtTelefono">
+    <br>
+    Email:
+    <input type="text" value="{{ registro[6] }}" name="txtEmail" id="txtEmail">
+    <br>
+    Empresa donde laboro:
+    <input type="text" value="{{ registro[7] }}" name="txtEmpresaLaboro" id="txtEmpresaLaboro">
+    <br>
+    Cargo que desempeño:
+    <input type="text" value="{{ registro[8] }}" name="txtCargo" id="txtCargo">
+    <br>
+    Fecha en la que inicio:
+    <input type="text" value="{{ registro[9] }}" name="txtFechaInicio" id="txtFechaInicio">
+    <br>
+    Fecha en la que se retiró:
+    <input type="text" value="{{ registro[10] }}" name="txtFechaRetiro" id="txtFechaRetiro">
+    <br>
+    Fecha de Nacimiento:
+    <input type="text" value="{{ registro[11] }}" name="txtFechaNacimiento" id="txtFechaNacimiento">
+    <br>
+    Fondo de pensión en el que estuvo afiliado:
+    <input type="text" value="{{ registro[12] }}"name="txtFondoPension" id="txtFondoPension">
+    <br>
+    Foto:
+    {{ registro[13] }}
+    <input type="file" name="txtFoto" id="txtFoto">
+    <br>
+    <br>
+    <input type="submit" value="Agregar">
+</form>
+    
+{% endfor %}

@@ -46,9 +46,8 @@
                 <td>{{ registro[11] }}</td>
                 <td>{{ registro[12] }}</td>
                 <td>{{ registro[13] }}</td>
-                <td> Editar │
-                    <a href="/destroy/{{registro[0]}}">Eliminar</a>
-                    
+                <td> <a href="/edit/{{registro[0]}}">Editar</a> │
+                    <a href="/destroy/{{registro[0]}}">Eliminar</a>                    
                 </td>
             </tr>                
             {% endfor %}

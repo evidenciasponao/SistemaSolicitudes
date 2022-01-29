@@ -40,6 +40,18 @@ def destroy(id):
     conn.commit()
     return redirect('/')
 
+@app.route('/edit/<int:id>')
+def edit(id):
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM registro WHERE id = %s", (id))
+    registros=cursor.fetchall()
+    conn.commit()
+    print(registros)
+    
+    return render_template('registros/edit.html', registros=registros)
+
 @app.route('/create')
 def create():
     return render_template('registros/create.html')
