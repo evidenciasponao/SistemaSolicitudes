@@ -31,6 +31,15 @@ def index():
 
     return render_template('registros/index.html', registro=registro)
 
+@app.route('/destroy/<int:id>')
+def destroy(id):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM registro WHERE id = %s",(id))
+    conn.commit()
+    return redirect('/')
+
 @app.route('/create')
 def create():
     return render_template('registros/create.html')
