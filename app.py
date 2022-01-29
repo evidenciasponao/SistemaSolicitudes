@@ -1,5 +1,6 @@
 from distutils.log import debug
 from fileinput import filename
+import re
 from flask import Flask
 from flask import render_template,request,redirect
 from flaskext.mysql import MySQL
@@ -49,8 +50,36 @@ def edit(id):
     registros=cursor.fetchall()
     conn.commit()
     print(registros)
-    
+
     return render_template('registros/edit.html', registros=registros)
+
+@app.route('/update', methods=['POST'])
+def update():
+    _cedula=request.form['txtCedula']
+    _lugarExpedicion=request.form['txtLugarExpedicion']
+    _nombres=request.form['txtNombres']
+    _apellidos=request.form['txtApellidos']
+    _telefono=request.form['txtTelefono']
+    _email=request.form['txtEmail']
+    _empresaLaboro=request.form['txtEmpresaLaboro']
+    _cargo=request.form['txtCargo']
+    _fechaInicio=request.form['txtFechaInicio']
+    _fechaRetiro=request.form['txtFechaRetiro']
+    _fechaNacimiento=request.form['txtFechaNacimiento']
+    _fondoPension=request.form['txtFondoPension']
+    _foto=request.files['txtFoto']    
+    id=request.form['txtID']
+
+    sql ="UPDATE `registro` SET cedula=%s, lugarExpedicion=%s, nombres=%s, apellidos=%s, telefono=%s, email=%s, empresaLaboro=%s, cargo=%s, fechaInicio=%s, fechaRetiro=%s, fechaNacimiento=%s, fondoPension=%s WHERE id=%s ;"
+    
+    datos=(_cedula,_lugarExpedicion,_nombres,_apellidos,_telefono,_email,_empresaLaboro,_cargo,_fechaInicio,_fechaRetiro,_fechaNacimiento,_fondoPension, id)
+    
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql,datos)
+    conn.commit()
+
+    return redirect('/')
 
 @app.route('/create')
 def create():

@@ -1,7 +1,9 @@
 Formulario para editar
 {% for registro in registros %}
 
-<form method="post" action="/store" enctype="multipart/form-data">
+<form method="post" action="/update" enctype="multipart/form-data">
+
+    <input type="text" value="{{ registro[0] }}" name="txtID" id="txtID">
     <br>
     Cedula:
     <input type="text" value="{{ registro[1] }}" name="txtCedula" id="txtCedula">
