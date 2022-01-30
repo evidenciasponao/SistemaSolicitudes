@@ -1,46 +1,77 @@
     {% include 'header.html' %}
+    <br>
     <form method="post" action="/store" enctype="multipart/form-data">
+
+        <div class="card">
+            <div class="card-header">
+                Ingresar registros
     
-    Cedula:
-    <input type="text" name="txtCedula" id="txtCedula" required>
-    <br>
-    Lugar de Expedición:
-    <input type="text" name="txtLugarExpedicion" id="txtLugarExpedicion">
-    <br>
-    Nombres:
-    <input type="text" name="txtNombres" id="txtNombres">
-    <br>
-    Apellidos:
-    <input type="text" name="txtApellidos" id="txtApellidos">
-    <br>
-    Teléfono:
-    <input type="text" name="txtTelefono" id="txtTelefono">
-    <br>
-    Email:
-    <input type="text" name="txtEmail" id="txtEmail">
-    <br>
-    Empresa donde laboro:
-    <input type="text" name="txtEmpresaLaboro" id="txtEmpresaLaboro">
-    <br>
-    Cargo que desempeño:
-    <input type="text" name="txtCargo" id="txtCargo">
-    <br>
-    Fecha en la que inicio:
-    <input type="text" name="txtFechaInicio" id="txtFechaInicio">
-    <br>
-    Fecha en la que se retiró:
-    <input type="text" name="txtFechaRetiro" id="txtFechaRetiro">
-    <br>
-    Fecha de Nacimiento:
-    <input type="text" name="txtFechaNacimiento" id="txtFechaNacimiento">
-    <br>
-    Fondo de pensión en el que estuvo afiliado:
-    <input type="text" name="txtFondoPension" id="txtFondoPension">
-    <br>
-    Foto:
-    <input type="file" name="txtFoto" id="txtFoto" required>
-    <br>
-    <br>
-    <input type="submit" value="Agregar">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Datos del usuario</h5>
+                <p class="card-text">
+                    
+                    <div class="form-group">
+                        <label for="txtCedula">Cedula:</label>
+                        <input id="txtCedula" class="form-control" type="text" name="txtCedula">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtLugarExpedicion">Lugar de expedicion:</label>
+                        <input id="txtLugarExpedicion" class="form-control" type="text" name="txtLugarExpedicion">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNombres">Nombres:</label>
+                        <input id="txtNombres" class="form-control" type="text" name="txtNombres">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtApellidos">Apellidos:</label>
+                        <input id="txtApellidos" class="form-control" type="text" name="txtApellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtTelefono">Telefono:</label>
+                        <input id="txtTelefono" class="form-control" type="text" name="txtTelefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email:</label>
+                        <input id="txtEmail" class="form-control" type="text" name="txtEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmpresaLaboro">Empresa donde laboro:</label>
+                        <input id="txtEmpresaLaboro" class="form-control" type="text" name="txtEmpresaLaboro">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCargo">Cargo que desempeño:</label>
+                        <input id="txtCargo" class="form-control" type="text" name="txtCargo">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFechaInicio">Fecha en la que inicio:</label>
+                        <input id="txtFechaInicio" class="form-control" type="text" name="txtFechaInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFechaRetiro">Fecha en la que se retiro:</label>
+                        <input id="txtFechaRetiro" class="form-control" type="text" name="txtFechaRetiro">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFechaNacimiento">Fecha de nacimiento:</label>
+                        <input id="txtFechaNacimiento" class="form-control" type="text" name="txtFechaNacimiento">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFondoPension">Fondo de pensión en el que estuvo afiliado:</label>
+                        <input id="txtFondoPension" class="form-control" type="text" name="txtFondoPension">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFoto">Foto:</label>
+                        <input id="txtFoto" class="form-control" type="file" name="txtFoto" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Agregar">
+                        <a href="{{url_for('index')}}" class="btn btn-primary">Regresar</a>
+                    </div>
+
+                </p>
+            </div>
+        </div>
+    
+
     </form>
 {% include 'footer.html' %}
