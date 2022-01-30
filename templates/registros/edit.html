@@ -43,7 +43,9 @@ Formulario para editar
     <input type="text" value="{{ registro[12] }}"name="txtFondoPension" id="txtFondoPension" required>
     <br>
     Foto:
-    {{ registro[13] }}
+    <br>
+        <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=registro[13])}}" alt="">
+    <br>
     <input type="file" name="txtFoto" id="txtFoto">
     <br>
     <br>
