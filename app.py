@@ -4,6 +4,7 @@ import re
 from flask import Flask
 from flask import render_template,request,redirect
 from flaskext.mysql import MySQL
+from flask import send_from_directory
 from datetime import datetime
 import os 
 
@@ -19,7 +20,9 @@ mysql.init_app(app)
 CARPETA= os.path.join('uploads')
 app.config['CARPETA']=CARPETA
 
-
+@app.route('/uploads/<nombreFoto>')
+def uploads(nombreFoto):
+    return send_from_directory(app.config['CARPETA'],nombreFoto)
 
 @app.route('/')
 def index():
