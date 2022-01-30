@@ -1,4 +1,12 @@
 {% include 'header.html' %}
+<br/>
+<a href="{{url_for('create')}}" class="btn btn-success">
+
+    Ingresar nueva solicitud
+
+</a>
+<br>
+<br>
 
     <table class="table table-sm table-hover">
         <thead class="thead-light">
@@ -43,8 +51,8 @@
                     
                 </td>
 
-                <td> <a href="/edit/{{registro[0]}}">Editar</a> │
-                    <a href="/destroy/{{registro[0]}}">Eliminar</a>                    
+                <td> <a class="btn btn-warning" href="/edit/{{registro[0]}}">Editar</a> │
+                    <a onclick="return confirm('¿Desea borrar el registro?')" class="btn btn-danger" href="/destroy/{{registro[0]}}">Eliminar</a>                    
                 </td>
             </tr>                
             {% endfor %}
